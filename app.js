@@ -25,6 +25,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/lib', express.static(__dirname + '/node_modules/Butterfly-js/dist'));
 
+// init socket
+require('./modules/socket.js')(io);
+
 // controllers
 var exampleController = require('./controllers/exampleController.js')(io);
 // end controllers
